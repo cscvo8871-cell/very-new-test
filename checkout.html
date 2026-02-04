@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ชำระเงิน | MyDream.Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; font-family:'Segoe UI',Tahoma,sans-serif; background:#f7f3ef; color:#333; }
+        header { background:#2d2a32; color:#fff; padding:20px; text-align:center; }
+        nav { background:#e8d8c4; padding:10px; text-align:center; }
+        nav a { margin:0 15px; text-decoration:none; color:#2d2a32; font-weight:bold; }
+        nav a:hover { color:#c44536; }
+        .container { max-width:700px; margin:auto; padding:40px 20px; }
+        h2 { text-align:center; margin-bottom:30px; }
+        form { background:#fff; padding:30px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+        label { display:block; margin-top:15px; font-weight:bold; }
+        input, select, textarea { width:100%; padding:12px; margin-top:5px; border-radius:8px; border:1px solid #ccc; }
+        .btn { margin-top:20px; width:100%; padding:14px; background:#2d2a32; color:#fff; border:none; border-radius:8px; font-size:16px; cursor:pointer; }
+        .btn:hover { background:#c44536; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MyDream.Shop</h1>
+    <p>ชำระเงิน</p>
+</header>
+
+<nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="products.html">สินค้า</a>
+    <a href="cart.html">ตะกร้าสินค้า</a>
+    <a href="login.html">เข้าสู่ระบบ</a>
+    <a href="checkout.html">ชำระเงิน</a>
+</nav>
+
+<div class="container">
+    <h2>แบบฟอร์มชำระเงิน</h2>
+    <form onsubmit="submitOrder(event)">
+        <label>ชื่อ - นามสกุล</label>
+        <input type="text" required>
+
+        <label>ที่อยู่จัดส่ง</label>
+        <textarea rows="3" required></textarea>
+
+        <label>เบอร์โทรศัพท์</label>
+        <input type="tel" required>
+
+        <label>วิธีการชำระเงิน</label>
+        <select required>
+            <option value="">-- เลือกวิธีชำระเงิน --</option>
+            <option>โอนเงินผ่านธนาคาร</option>
+            <option>พร้อมเพย์</option>
+            <option>เก็บเงินปลายทาง</option>
+        </select>
+
+        <button type="submit" class="btn">ยืนยันการสั่งซื้อ</button>
+    </form>
+</div>
+
+<script>
+if (localStorage.getItem('loggedIn') !== 'true') {
+    alert('กรุณาเข้าสู่ระบบก่อนชำระเงิน');
+    window.location.href = 'login.html';
+}
+
+function submitOrder(event) {
+    event.preventDefault();
+    alert('สั่งซื้อสำเร็จ! ขอบคุณที่ใช้บริการ Vintage Teen Shop');
+    localStorage.removeItem('cart');
+    window.location.href = 'index.html';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ติดต่อเรา | MyDream.Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; font-family:'Segoe UI',Tahoma,sans-serif; background:#f7f3ef; color:#333; }
+        header { background:#2d2a32; color:#fff; padding:20px; text-align:center; }
+        nav { background:#e8d8c4; padding:10px; text-align:center; }
+        nav a { margin:0 15px; text-decoration:none; color:#2d2a32; font-weight:bold; }
+        nav a:hover { color:#c44536; }
+        .container { max-width:700px; margin:auto; padding:40px 20px; }
+        h2 { text-align:center; margin-bottom:20px; }
+        .contact-box { background:#fff; padding:30px; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+        label { display:block; margin-top:15px; }
+        input, textarea { width:100%; padding:10px; border-radius:8px; border:1px solid #ccc; margin-top:5px; }
+        .btn { margin-top:20px; display:inline-block; padding:12px 25px; background:#2d2a32; color:#fff; border-radius:8px; text-decoration:none; border:none; cursor:pointer; }
+        .btn:hover { background:#c44536; }
+        .info { margin-top:25px; text-align:center; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MyDream.Shop</h1>
+    <p>ติดต่อเรา</p>
+</header>
+
+<nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="products.html">สินค้า</a>
+    <a href="cart.html">ตะกร้าสินค้า</a>
+    <a href="login.html">เข้าสู่ระบบ</a>
+    <a href="checkout.html">ชำระเงิน</a>
+    <a href="contact.html">ติดต่อเรา</a>
+</nav>
+
+<div class="container">
+    <div class="contact-box">
+        <h2>ส่งข้อความถึงเรา</h2>
+        <form onsubmit="sendMessage(); return false;">
+            <label>ชื่อ</label>
+            <input type="text" id="name" required>
+
+            <label>อีเมล</label>
+            <input type="email" id="email" required>
+
+            <label>ข้อความ</label>
+            <textarea id="message" rows="5" required></textarea>
+
+            <button class="btn" type="submit">ส่งข้อความ</button>
+        </form>
+
+        <div class="info">
+            <p>📍 ที่อยู่: 127 ถนนเจริญกรุง กรุงเทพฯ</p>
+            <p>📞 โทร: 080-123-4567</p>
+            <p>📧 อีเมล: MyDreamShop@email.com</p>
+        </div>
+    </div>
+</div>
+
+<script>
+function sendMessage() {
+    alert('ขอบคุณที่ติดต่อเรา! เราจะตอบกลับโดยเร็วที่สุด 😊');
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('message').value = '';
+}
+</script>
+
+</body>
+</html>

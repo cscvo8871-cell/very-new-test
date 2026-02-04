@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>MyDream.Shop | หน้าแรก</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; font-family:'Segoe UI',Tahoma,sans-serif; background:#f7f3ef; color:#333; }
+        header { background:#2d2a32; color:#fff; padding:20px; text-align:center; }
+        nav { background:#e8d8c4; padding:10px; text-align:center; }
+        nav a { margin:0 15px; text-decoration:none; color:#2d2a32; font-weight:bold; }
+        nav a:hover { color:#c44536; }
+        .container { max-width:1000px; margin:auto; padding:40px 20px; }
+        h2 { text-align:center; margin-bottom:30px; }
+        .products { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; }
+        .card { background:#fff; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.1); overflow:hidden; transition:transform 0.3s; }
+        .card:hover { transform:translateY(-5px); }
+        .card img { width:100%; height:280px; object-fit:cover; }
+        .card-content { padding:15px; text-align:center; }
+        .card-content h3 { margin:10px 0; }
+        .price { font-weight:bold; margin-bottom:10px; }
+        .btn { display:inline-block; padding:10px 20px; background:#2d2a32; color:#fff; border-radius:8px; text-decoration:none; }
+        .btn:hover { background:#c44536; }
+        footer { background:#2d2a32; color:#fff; text-align:center; padding:15px; margin-top:40px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MyDream.Shop</h1>
+    <p>สินค้าแฟชั่นวัยรุ่น</p>
+</header>
+
+<nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="products.html">สินค้า</a>
+    <a href="cart.html">ตะกร้าสินค้า</a>
+    <a href="login.html">เข้าสู่ระบบ</a>
+    <a href="checkout.html">ชำระเงิน</a>
+    <a href="contact.html">ติดต่อเรา</a>
+</nav>
+
+<div class="container">
+    <h2>สินค้าแนะนำ</h2>
+    <div class="products">
+
+        <div class="card">
+            <img src="img/de.jpg" alt="เดรสสายเดี่ยวเลเยอร์">
+            <div class="card-content">
+                <h3>เดรสสายเดี่ยวเลเยอร์</h3>
+                <p class="price">฿580</p>
+                <a href="product1.html" class="btn">ดูรายละเอียด</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/ff.jpg" alt="เสื้อยืดพิมพ์ลายทรงหลวม">
+            <div class="card-content">
+                <h3>เสื้อยืดพิมพ์ลายทรงหลวม</h3>
+                <p class="price">฿490</p>
+                <a href="product2.html" class="btn">ดูรายละเอียด</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="img/dd.jpg" alt="แจ็กเก็ตแขนสั้น">
+            <div class="card-content">
+                <h3>แจ็กเก็ตแขนสั้น</h3>
+                <p class="price">฿1000</p>
+                <a href="product3.html" class="btn">ดูรายละเอียด</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <p>MyDream.Shop | แฟชั่นวัยรุ่น</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>สินค้า | MyDream.Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; font-family:'Segoe UI',Tahoma,sans-serif; background:#f7f3ef; color:#333; }
+        header { background:#2d2a32; color:#fff; padding:20px; text-align:center; }
+        nav { background:#e8d8c4; padding:10px; text-align:center; }
+        nav a { margin:0 15px; text-decoration:none; color:#2d2a32; font-weight:bold; }
+        nav a:hover { color:#c44536; }
+        .container { max-width:1100px; margin:auto; padding:40px 20px; }
+        h2 { text-align:center; margin-bottom:30px; }
+        .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+        .card { background:#fff; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); padding:20px; text-align:center; transition:transform 0.3s; }
+        .card:hover { transform:translateY(-5px); }
+        .card img { width:100%; border-radius:10px; margin-bottom:15px; }
+        .price { font-size:18px; font-weight:bold; margin:10px 0; }
+        .btn { display:inline-block; margin-top:10px; padding:10px 20px; background:#2d2a32; color:#fff; border-radius:8px; text-decoration:none; }
+        .btn:hover { background:#c44536; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MyDream.Shop</h1>
+    <p>สินค้าแฟชั่นวัยรุ่น</p>
+</header>
+
+<nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="products.html">สินค้า</a>
+    <a href="cart.html">ตะกร้าสินค้า</a>
+    <a href="login.html">เข้าสู่ระบบ</a>
+    <a href="checkout.html">ชำระเงิน</a>
+</nav>
+
+<div class="container">
+    <h2>สินค้าทั้งหมด</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="img/a.jpg" alt="กางเกงสเวตแบบหลวม">
+            <h3>กางเกงสเวตแบบหลวม</h3>
+            <p class="price">฿690</p>
+            <a href="#" class="btn" onclick="addToCart('กางเกงสเวตแบบหลวม', 690)">เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="card">
+            <img src="img/aa.jpg" alt="เสื้อเชิ้ตลายพิมพ์ทรงหลวม">
+            <h3>เสื้อเชิ้ตลายพิมพ์ทรงหลวม</h3>
+            <p class="price">฿599</p>
+            <a href="#" class="btn" onclick="addToCart('เสื้อเชิ้ตลายพิมพ์ทรงหลวม', 599)">เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="card">
+            <img src="img/aaa.jpg" alt="เสื้อเชิ้ตป็อปลินผูกด้านหน้า">
+            <h3>เสื้อเชิ้ตป็อปลินผูกด้านหน้า</h3>
+            <p class="price">฿899</p>
+            <a href="#" class="btn" onclick="addToCart('เสื้อเชิ้ตลายสก็อต', 899)">เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="card">
+            <img src="img/e.jpg" alt="กระโปรงแม็กซี่">
+            <h3>กระโปรงแม็กซี่</h3>
+            <p class="price">฿259</p>
+            <a href="#" class="btn" onclick="addToCart('กระโปรงแม็กซี่', 259)">เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="card">
+            <img src="img/ee.jpg" alt="กระโปรงผ้าซาติน">
+            <h3>กระโปรงผ้าซาติน</h3>
+            <p class="price">฿400</p>
+            <a href="#" class="btn" onclick="addToCart('กระโปรงผ้าซาติน', 400)">เพิ่มลงตะกร้า</a>
+        </div>
+        <div class="card">
+            <img src="img/eee.jpg" alt="เสื้อฮู้ดแบบมีฮู้ด">
+            <h3>เสื้อฮู้ดแบบมีฮู้ด</h3>
+            <p class="price">฿349</p>
+            <a href="#" class="btn" onclick="addToCart('เสื้อฮู้ดแบบมีฮู้ด', 349)">เพิ่มลงตะกร้า</a>
+        </div>
+		 <div class="card">
+            <img src="img/o.jpg" alt="กางเกงทรงคาร์เพนเตอร์ทรงปกติ">
+            <h3>กางเกงทรงคาร์เพนเตอร์ทรงปกติ</h3>
+            <p class="price">฿800</p>
+            <a href="#" class="btn" onclick="addToCart('กางเกงทรงคาร์เพนเตอร์ทรงปกติ', 800)">เพิ่มลงตะกร้า</a>
+        </div>
+		<div class="card">
+            <img src="img/oo.jpg" alt="เสื้อโปโลทรงหลวม">
+            <h3>เสื้อโปโลทรงหลวม</h3>
+            <p class="price">฿750</p>
+            <a href="#" class="btn" onclick="addToCart('เสื้อโปโลทรงหลวม', 750)">เพิ่มลงตะกร้า</a>
+        </div>
+    </div>
+</div>
+
+<script>
+function addToCart(name, price) {
+    if (localStorage.getItem('loggedIn') !== 'true') {
+        alert('กรุณาเข้าสู่ระบบก่อนสั่งซื้อสินค้า');
+        window.location.href = 'login.html';
+        return;
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingItem = cart.find(item => item.name === name);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ name: name, price: price, quantity: 1 });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert('เพิ่มสินค้าเข้าตะกร้าแล้ว!');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ตะกร้าสินค้า | MyDream.Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin:0; font-family:'Segoe UI',Tahoma,sans-serif; background:#f7f3ef; color:#333; }
+        header { background:#2d2a32; color:#fff; padding:20px; text-align:center; }
+        nav { background:#e8d8c4; padding:10px; text-align:center; }
+        nav a { margin:0 15px; text-decoration:none; color:#2d2a32; font-weight:bold; }
+        nav a:hover { color:#c44536; }
+        .container { max-width:900px; margin:auto; padding:40px 20px; }
+        h2 { text-align:center; margin-bottom:30px; }
+        table { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+        th, td { padding:15px; text-align:center; border-bottom:1px solid #eee; }
+        th { background:#2d2a32; color:#fff; }
+        .total { text-align:right; margin-top:20px; font-size:20px; font-weight:bold; }
+        .btn { display:inline-block; margin:10px; padding:12px 20px; background:#2d2a32; color:#fff; border-radius:8px; text-decoration:none; }
+        .btn:hover { background:#c44536; }
+        .empty { text-align:center; font-size:18px; margin-top:40px; }
+        button { padding:6px 12px; border:none; border-radius:6px; background:#c44536; color:#fff; cursor:pointer; }
+        button:hover { background:#a03528; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MyDream.Shop</h1>
+    <p>ตะกร้าสินค้าของคุณ</p>
+</header>
+
+<nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="products.html">สินค้า</a>
+    <a href="cart.html">ตะกร้าสินค้า</a>
+    <a href="login.html">เข้าสู่ระบบ</a>
+    <a href="checkout.html">ชำระเงิน</a>
+</nav>
+
+<div class="container">
+    <h2>ตะกร้าสินค้า</h2>
+    <div id="cart-content"></div>
+    <div class="total" id="total"></div>
+    <div style="text-align:center;">
+        <a href="products.html" class="btn">เลือกซื้อสินค้าเพิ่ม</a>
+        <a href="checkout.html" class="btn">ไปชำระเงิน</a>
+    </div>
+</div>
+
+<script>
+if (localStorage.getItem('loggedIn') !== 'true') {
+    alert('กรุณาเข้าสู่ระบบก่อนดูตะกร้าสินค้า');
+    window.location.href = 'login.html';
+}
+
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
+const cartContent = document.getElementById('cart-content');
+const totalEl = document.getElementById('total');
+
+function renderCart() {
+    if (cart.length === 0) {
+        cartContent.innerHTML = '<p class="empty">ยังไม่มีสินค้าในตะกร้า</p>';
+        totalEl.textContent = '';
+        return;
+    }
+
+    let html = '<table><tr><th>สินค้า</th><th>ราคา</th><th>จำนวน</th><th>รวม</th><th>ลบ</th></tr>';
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        const sum = item.price * item.quantity;
+        total += sum;
+        html += `<tr>
+                    <td>${item.name}</td>
+                    <td>฿${item.price}</td>
+                    <td>${item.quantity}</td>
+                    <td>฿${sum}</td>
+                    <td><button onclick="removeItem(${index})">ลบ</button></td>
+                </tr>`;
+    });
+
+    html += '</table>';
+    cartContent.innerHTML = html;
+    totalEl.textContent = `ยอดรวมทั้งหมด: ฿${total}`;
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
+}
+
+renderCart();
+</script>
+
+</body>
+</html>
